@@ -1,0 +1,31 @@
+{
+  "name": "bolster",
+  "version": "1.0.0",
+  "description": "Bolster is a clean and modern purse Vue Nuxt.js eCommerce template. This is built on Vue.js, Nuxt.js, Vuex, Firebase, Sass and Bootstrap 4. Bolster has included with an easy checkout feature. It has responsive beautiful design layouts with amazing Retina Ready visual UX/ UI experience.",
+  "author": "EnvyTheme.com",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0",
+    "firebase": "^7.14.0",
+    "nuxt": "^2.0.0",
+    "vue-backtotop": "^1.6.1",
+    "vue-carousel": "^0.18.0",
+    "vue-toastification": "^0.8.0",
+    "vueperslides": "^2.8.2"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2"
+  }
+}
