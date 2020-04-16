@@ -6,6 +6,10 @@ For Vue CLI 3/Nuxt, with router, Firebase and other Nuxt goodies
 
 ## Demo
 
+https://zen-fermat-3b49a3.netlify.app/
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/95a27d94-5a65-4c5a-93c9-4b45325702c1/deploy-status)](https://app.netlify.com/sites/zen-fermat-3b49a3/deploys)
+
 ## Repo
 
 ## Author
