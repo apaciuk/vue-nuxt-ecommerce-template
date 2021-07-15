@@ -16,7 +16,7 @@
                                 <div class="container">
                                     <div class="banner-content">
                                         <span class="sub-title">Limited Time Offer!</span>
-                                        <h1>Clothing Made for You!</h1>
+                                        <h1>Watches Made for You!</h1>
                                         <p>Take 20% Off ‘Sale Must-Haves'</p>
                                         <a href="#" class="btn btn-primary">Shop women's</a>
                                     </div>
@@ -33,7 +33,7 @@
                                 <div class="container">
                                     <div class="banner-content">
                                         <span class="sub-title">Limited Time Offer!</span>
-                                        <h1>Clothing Made for You!</h1>
+                                        <h1>Watches Made for You!</h1>
                                         <p>Take 20% Off ‘Sale Must-Haves'</p>
                                         <a href="#" class="btn btn-primary">Shop Men's</a>
                                     </div>

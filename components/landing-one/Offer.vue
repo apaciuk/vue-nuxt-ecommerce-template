@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="offer-box">
-                        <img src="../../assets/img/offer-women.jpg" alt="image">
+                        <img src="https://picsum.photos/359/400" alt="image">
 
                         <div class="category">
                             <h4>Women's</h4>
@@ -30,7 +30,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="offer-box">
-                        <img src="../../assets/img/1.jpg" alt="image">
+                        <img src="https://picsum.photos/359/400" alt="image">
 
                         <div class="category">
                             <h4>Accessories</h4>
@@ -55,7 +55,7 @@
 
                 <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
                     <div class="offer-box">
-                        <img src="../../assets/img/offer-men.jpg" alt="image">
+                        <img src="https://picsum.photos/359/400" alt="image">
 
                         <div class="category">
                             <h4>Men's</h4>

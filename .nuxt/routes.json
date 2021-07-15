@@ -1,0 +1,100 @@
+[
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/admin.vue",
+    "chunkName": "pages/admin",
+    "_name": "_0bc20496"
+  },
+  {
+    "name": "blog-details",
+    "path": "/blog-details",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/blog-details.vue",
+    "chunkName": "pages/blog-details",
+    "_name": "_08628120"
+  },
+  {
+    "name": "blog-one",
+    "path": "/blog-one",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/blog-one.vue",
+    "chunkName": "pages/blog-one",
+    "_name": "_94c3c378"
+  },
+  {
+    "name": "cart",
+    "path": "/cart",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/cart.vue",
+    "chunkName": "pages/cart",
+    "_name": "_7249e4ae"
+  },
+  {
+    "name": "checkout",
+    "path": "/checkout",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/checkout.vue",
+    "chunkName": "pages/checkout",
+    "_name": "_79ca0762"
+  },
+  {
+    "name": "contact",
+    "path": "/contact",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/contact.vue",
+    "chunkName": "pages/contact",
+    "_name": "_fc8cf5b2"
+  },
+  {
+    "name": "diction-three",
+    "path": "/diction-three",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/diction-three.vue",
+    "chunkName": "pages/diction-three",
+    "_name": "_89b6f62c"
+  },
+  {
+    "name": "diction-two",
+    "path": "/diction-two",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/diction-two.vue",
+    "chunkName": "pages/diction-two",
+    "_name": "_181010d0"
+  },
+  {
+    "name": "gallery-one",
+    "path": "/gallery-one",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/gallery-one.vue",
+    "chunkName": "pages/gallery-one",
+    "_name": "_3106d51c"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_b80b58a0"
+  },
+  {
+    "name": "products",
+    "path": "/products",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/products.vue",
+    "chunkName": "pages/products",
+    "_name": "_ad1f7d26"
+  },
+  {
+    "name": "signup",
+    "path": "/signup",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/signup.vue",
+    "chunkName": "pages/signup",
+    "_name": "_27aa0f61"
+  },
+  {
+    "name": "products-details-id",
+    "path": "/products-details/:id?",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/products-details/_id.vue",
+    "chunkName": "pages/products-details/_id",
+    "_name": "_e1d707e6"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/anton/IProjects/Archived/vue-nuxt-ecommerce-template/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_4b5a9ece"
+  }
+]

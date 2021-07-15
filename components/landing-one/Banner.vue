@@ -5,12 +5,12 @@
             <div class="d-table-cell">
                 <div class="container">
                     <div class="main-banner-content">
-                        <span>New Inspiration 2019</span>
-                        <h1>Clothing made for you!</h1>
-                        <p>Trending from men and women style collection</p>
+                        <span style="color:whitesmoke;">New Inspiration 2020</span>
+                        <h1 style="color:lightgray;">Watches made for you!</h1>
+                        <p style=color:gray;>Trending from men and women style collection</p>
 
-                        <nuxt-link to="/products" class="btn btn-primary">Shop Women's</nuxt-link>
-                        <nuxt-link to="/products" class="btn btn-light">Shop Men's</nuxt-link>
+                        <nuxt-link to="/products" class="btn btn-success">Shop Women's</nuxt-link>
+                        <nuxt-link to="/products" class="btn btn-primary">Shop Men's</nuxt-link>
                     </div>
                 </div>
             </div>

@@ -1,14 +1,9 @@
 import Vue from 'vue'
+import { decode, parsePath, withoutBase, withoutTrailingSlash, normalizeURL } from 'ufo'
 
-import {
-  getMatchedComponentsInstances,
-  promisify,
-  globalHandleError
-} from './utils'
-
+import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch, promisify, globalHandleError, urlJoin, sanitizeComponent } from './utils'
 import NuxtError from '../layouts/error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
-import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
@@ -35,24 +30,11 @@ import _16999d5e from '../layouts/SiteLoder.vue'
 import _16f9b628 from '../layouts/TopHeader.vue'
 import _21187fc5 from '../layouts/TopPanel.vue'
 
-const layouts = { "_admin": _77068119,"_BackToTop": _648210dd,"_default": _6f6c098b,"_error-layout": _7efe0585,"_Footer": _3c52dd31,"_Menubar": _a1937d04,"_SidebarPanel": _488d31c4,"_SiteLoder": _16999d5e,"_TopHeader": _16f9b628,"_TopPanel": _21187fc5 }
+const layouts = { "_admin": sanitizeComponent(_77068119),"_BackToTop": sanitizeComponent(_648210dd),"_default": sanitizeComponent(_6f6c098b),"_error-layout": sanitizeComponent(_7efe0585),"_Footer": sanitizeComponent(_3c52dd31),"_Menubar": sanitizeComponent(_a1937d04),"_SidebarPanel": sanitizeComponent(_488d31c4),"_SiteLoder": sanitizeComponent(_16999d5e),"_TopHeader": sanitizeComponent(_16f9b628),"_TopPanel": sanitizeComponent(_21187fc5) }
 
 export default {
-  head: {"htmlAttrs":{"lang":"en"},"title":"Denzilla - Lifestyle for the 21st Century","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Bolster is a clean and modern purse Vue Nuxt.js eCommerce template. This is built on Vue.js, Nuxt.js, Vuex, Firebase, Sass and Bootstrap 4. Bolster has included with an easy checkout feature. It has responsive beautiful design layouts with amazing Retina Ready visual UX\u002F UI experience."}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
-
   render (h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })
-
-    if (this.nuxt.err && NuxtError) {
-      const errorLayout = (NuxtError.options || NuxtError).layout
-      if (errorLayout) {
-        this.setLayout(
-          typeof errorLayout === 'function'
-            ? errorLayout.call(NuxtError, this.context)
-            : errorLayout
-        )
-      }
-    }
 
     const layoutEl = h(this.layout || 'nuxt')
     const templateEl = h('div', {
@@ -83,7 +65,7 @@ export default {
       }
     }, [
       loadingEl,
-      h(NuxtBuildIndicator),
+
       transitionEl
     ])
   },
@@ -92,17 +74,20 @@ export default {
     isOnline: true,
 
     layout: null,
-    layoutName: ''
-  }),
+    layoutName: '',
+
+    nbFetching: 0
+    }),
 
   beforeCreate () {
     Vue.util.defineReactive(this, 'nuxt', this.$options.nuxt)
   },
   created () {
     // Add this.$nuxt in child instances
-    Vue.prototype.$nuxt = this
-    // add to window so we can listen when ready
+    this.$root.$options.$nuxt = this
+
     if (process.client) {
+      // add to window so we can listen when ready
       window.$nuxt = this
 
       this.refreshOnlineStatus()
@@ -116,9 +101,10 @@ export default {
     this.context = this.$options.context
   },
 
-  mounted () {
+  async mounted () {
     this.$loading = this.$refs.loading
   },
+
   watch: {
     'nuxt.err': 'errorChanged'
   },
@@ -126,7 +112,11 @@ export default {
   computed: {
     isOffline () {
       return !this.isOnline
-    }
+    },
+
+    isFetching () {
+      return this.nbFetching > 0
+    },
   },
 
   methods: {
@@ -154,8 +144,17 @@ export default {
       const promises = pages.map((page) => {
         const p = []
 
-        if (page.$options.fetch) {
+        // Old fetch
+        if (page.$options.fetch && page.$options.fetch.length) {
           p.push(promisify(page.$options.fetch, this.context))
+        }
+        if (page.$fetch) {
+          p.push(page.$fetch())
+        } else {
+          // Get all component instance to call $fetch
+          for (const component of getChildrenComponentInstancesUsingFetch(page.$vnode.componentInstance)) {
+            p.push(component.$fetch())
+          }
         }
 
         if (page.$options.asyncData) {
@@ -174,29 +173,34 @@ export default {
       try {
         await Promise.all(promises)
       } catch (error) {
-        this.$loading.fail()
+        this.$loading.fail(error)
         globalHandleError(error)
         this.error(error)
       }
       this.$loading.finish()
     },
-
     errorChanged () {
-      if (this.nuxt.err && this.$loading) {
-        if (this.$loading.fail) {
-          this.$loading.fail()
+      if (this.nuxt.err) {
+        if (this.$loading) {
+          if (this.$loading.fail) {
+            this.$loading.fail(this.nuxt.err)
+          }
+          if (this.$loading.finish) {
+            this.$loading.finish()
+          }
         }
-        if (this.$loading.finish) {
-          this.$loading.finish()
+
+        let errorLayout = (NuxtError.options || NuxtError).layout;
+
+        if (typeof errorLayout === 'function') {
+          errorLayout = errorLayout(this.context)
         }
+
+        this.setLayout(errorLayout)
       }
     },
 
     setLayout (layout) {
-      if(layout && typeof layout !== 'string') {
-        throw new Error('[nuxt] Avoid using non-string value as layout property.')
-      }
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
@@ -209,7 +213,7 @@ export default {
         layout = 'default'
       }
       return Promise.resolve(layouts['_' + layout])
-    }
+    },
   },
 
   components: {

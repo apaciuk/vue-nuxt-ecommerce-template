@@ -1,0 +1,37 @@
+{
+  "entry": "server.js",
+  "files": {
+    "pages/admin.js": "pages/admin.js",
+    "pages/blog-details.js": "pages/blog-details.js",
+    "pages/blog-one.js": "pages/blog-one.js",
+    "pages/cart.js": "pages/cart.js",
+    "pages/checkout.js": "pages/checkout.js",
+    "pages/contact.js": "pages/contact.js",
+    "pages/diction-three.js": "pages/diction-three.js",
+    "pages/diction-two.js": "pages/diction-two.js",
+    "pages/gallery-one.js": "pages/gallery-one.js",
+    "pages/index.js": "pages/index.js",
+    "pages/login.js": "pages/login.js",
+    "pages/products-details/_id.js": "pages/products-details/_id.js",
+    "pages/products.js": "pages/products.js",
+    "pages/signup.js": "pages/signup.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "pages/admin.js": "pages/admin.js.map",
+    "pages/blog-details.js": "pages/blog-details.js.map",
+    "pages/blog-one.js": "pages/blog-one.js.map",
+    "pages/cart.js": "pages/cart.js.map",
+    "pages/checkout.js": "pages/checkout.js.map",
+    "pages/contact.js": "pages/contact.js.map",
+    "pages/diction-three.js": "pages/diction-three.js.map",
+    "pages/diction-two.js": "pages/diction-two.js.map",
+    "pages/gallery-one.js": "pages/gallery-one.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "pages/login.js": "pages/login.js.map",
+    "pages/products-details/_id.js": "pages/products-details/_id.js.map",
+    "pages/products.js": "pages/products.js.map",
+    "pages/signup.js": "pages/signup.js.map",
+    "server.js": "server.js.map"
+  }
+}
