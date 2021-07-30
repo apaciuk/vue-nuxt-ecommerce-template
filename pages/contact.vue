@@ -22,10 +22,10 @@
                             <p>Have a question? You may find an answer in our FAQs. But you can also contact us.</p>
 
                             <ul class="contact-list">
-                                <li><i class="fas fa-map-marker-alt"></i> Location: 2750 Quadra Street Victoria, Canada</li>
-                                <li><i class="fas fa-phone"></i> Call Us: <a href="#">(+123) 456-7898</a></li>
-                                <li><i class="far fa-envelope"></i> Email Us: <a href="#">support@comero.com</a></li>
-                                <li><i class="fas fa-fax"></i> Fax: <a href="#">+123456</a></li>
+                                <li><i class="fas fa-map-marker-alt"></i> Location: 553 AS Tower, 6th floor,Chittagong</li>
+                                <li><i class="fas fa-phone"></i> Call Us: <a href="#">(+880) 1777-866754</a></li>
+                                <li><i class="far fa-envelope"></i> Email Us: <a href="#">eselaixyz@gmail.com</a></li>
+                                <li><i class="fas fa-fax"></i> Fax: <a href="#">+02-41355073</a></li>
                             </ul>
 
                             <h3>Opening Hours:</h3>
@@ -39,9 +39,9 @@
 
                             <h3>Follow Us:</h3>
                             <ul class="social">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://facebook.com/stitchingblouse"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://instagram.com/stitchingblouse"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fab fa-behance"></i></a></li>
                                 <li><a href="#"><i class="fab fa-skype"></i></a></li>
                                 <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
